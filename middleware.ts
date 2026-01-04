@@ -116,9 +116,12 @@ export async function middleware(request: NextRequest) {
     } = await supabase.auth.getUser()
 
     // =====================================================
-    // 5. ROUTE PROTECTION
+    // 5. ROUTE PROTECTION - DISABLED FOR NOW
     // =====================================================
+    // Authentication is disabled for initial development
+    // Uncomment below to re-enable login requirement
 
+    /*
     // Public routes that don't require authentication
     const publicRoutes = ['/login', '/auth/callback', '/api/cron', '/maintenance']
     const isPublicRoute = publicRoutes.some(route => pathname.startsWith(route))
@@ -148,6 +151,7 @@ export async function middleware(request: NextRequest) {
         })
         return response
     }
+    */
 
     // =====================================================
     // 6. APPLY SECURITY HEADERS TO RESPONSE

@@ -119,69 +119,6 @@ export function AppShell({ children }: { children: ReactNode }) {
                             )}
                         </div>
 
-                        {/* Profile Section */}
-                        {isAuthenticated && (
-                            <div className="relative">
-                                <button
-                                    onClick={() => setShowProfileMenu(!showProfileMenu)}
-                                    className="w-full flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--bg-tertiary)] transition-colors"
-                                >
-                                    {/* Avatar */}
-                                    {avatarUrl ? (
-                                        <img
-                                            src={avatarUrl}
-                                            alt={fullName || 'User'}
-                                            className="w-9 h-9 rounded-full object-cover border-2 border-[var(--accent-blue)]/30"
-                                        />
-                                    ) : (
-                                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-sky)] flex items-center justify-center text-white font-bold text-sm">
-                                            {fullName?.charAt(0).toUpperCase() || 'U'}
-                                        </div>
-                                    )}
-                                    <div className="hidden lg:block flex-1 text-left min-w-0">
-                                        <p className="text-sm font-medium text-[var(--text-primary)] truncate">{fullName}</p>
-                                        <p className="text-[10px] text-[var(--text-muted)] truncate">{email}</p>
-                                    </div>
-                                    <ChevronRight className={cn(
-                                        "w-4 h-4 text-[var(--text-muted)] hidden lg:block transition-transform",
-                                        showProfileMenu && "rotate-90"
-                                    )} />
-                                </button>
-
-                                {/* Profile Dropdown Menu */}
-                                {showProfileMenu && (
-                                    <div className="absolute left-0 right-0 mt-1 bg-[var(--bg-secondary)] border border-[var(--border-light)] rounded-xl shadow-xl z-50 overflow-hidden">
-                                        <div className="p-3 border-b border-[var(--border-light)]">
-                                            <p className="text-sm font-medium text-[var(--text-primary)]">{fullName}</p>
-                                            <p className="text-xs text-[var(--text-muted)]">{email}</p>
-                                            {isAdmin && (
-                                                <span className="inline-block mt-1 text-[9px] bg-[var(--success-color)] text-white px-2 py-0.5 rounded-full font-bold">
-                                                    Administrator
-                                                </span>
-                                            )}
-                                        </div>
-                                        <Link
-                                            href="/settings"
-                                            onClick={() => setShowProfileMenu(false)}
-                                            className="flex items-center gap-2 px-3 py-2.5 text-sm text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors"
-                                        >
-                                            <Settings className="w-4 h-4" />
-                                            Settings
-                                        </Link>
-                                        <button
-                                            onClick={() => {
-                                                setShowProfileMenu(false)
-                                                handleAuthClick()
-                                            }}
-                                            className="flex items-center gap-2 px-3 py-2.5 text-sm text-[var(--danger-color)] hover:bg-red-50 transition-colors w-full"
-                                        >
-                                            <LogOut className="w-4 h-4" />
-                                            Sign Out
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        )}
                     </div>
 
                     {/* Nav Items */}
@@ -243,29 +180,8 @@ export function AppShell({ children }: { children: ReactNode }) {
 
                     {/* Sidebar Footer */}
                     <div className="p-3 lg:p-4 border-t border-[var(--border-light)]">
-                        <button
-                            onClick={handleAuthClick}
-                            title={isAuthenticated ? "Logout" : "Login"}
-                            className={cn(
-                                "flex items-center gap-3 px-3 py-2 w-full rounded-lg transition-colors",
-                                isAuthenticated
-                                    ? "text-[var(--danger-color)] hover:bg-red-50"
-                                    : "text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]"
-                            )}
-                        >
-                            {isAuthenticated ? <LogOut className="w-5 h-5 shrink-0" /> : <LogIn className="w-5 h-5 shrink-0" />}
-                            <span className="text-sm font-medium hidden lg:block">
-                                {isAuthenticated ? (isAdmin ? "Admin" : "Logout") : "Login"}
-                            </span>
-                        </button>
-                        {isAdmin && (
-                            <div className="mt-2 px-2">
-                                <span className="text-[9px] bg-[var(--success-color)] text-white px-2 py-0.5 rounded-full font-bold block text-center">
-                                    ADMIN MODE
-                                </span>
-                            </div>
-                        )}
-                        <p className="text-[10px] text-[var(--text-muted)] text-center mt-2 hidden lg:block">CROW v1.0</p>
+                        <p className="text-[10px] text-[var(--text-muted)] text-center hidden lg:block">CROW Process v1.0</p>
+                        <p className="text-[9px] text-[var(--text-muted)] text-center mt-1 hidden lg:block">ISO 9001:2015 Compliant</p>
                     </div>
                 </aside>
 
@@ -400,37 +316,12 @@ export function AppShell({ children }: { children: ReactNode }) {
                             </span>
                         </Link>
 
-                        {/* Auth Button */}
-                        <button
-                            onClick={() => {
-                                setIsDrawerOpen(false)
-                                handleAuthClick()
-                            }}
-                            className={cn(
-                                "flex items-center gap-4 px-6 py-4 w-full text-left transition-colors",
-                                isAuthenticated
-                                    ? "text-[var(--danger-color)] hover:bg-red-50"
-                                    : "text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]"
-                            )}
-                        >
-                            {isAuthenticated ? <LogOut className="w-5 h-5" /> : <LogIn className="w-5 h-5" />}
-                            <span className="text-sm font-medium">
-                                {isAuthenticated ? (isAdmin ? "Admin Logout" : "Logout") : "Login"}
-                            </span>
-                            {isAdmin && (
-                                <span className="ml-auto text-[10px] bg-[var(--success-color)] text-white px-2 py-0.5 rounded-full font-bold">
-                                    ADMIN
-                                </span>
-                            )}
-                        </button>
                     </div>
 
                     {/* Drawer Footer */}
                     <div className="p-5 text-center border-t border-[var(--border-light)]">
                         <p className="text-xs text-[var(--text-muted)]">CROW Process v1.0</p>
-                        {isAdmin && (
-                            <p className="text-[10px] text-[var(--success-color)] mt-1">✓ Admin Mode Active</p>
-                        )}
+                        <p className="text-[10px] text-[var(--text-muted)] mt-1">ISO 9001:2015 Compliant</p>
                     </div>
                 </nav>
 
