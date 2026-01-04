@@ -552,10 +552,17 @@ BEGIN
             'shipping_items', 'quality_metrics', 'oee_records'
         ])
     LOOP
-        EXECUTE format('CREATE POLICY IF NOT EXISTS "Allow public read" ON %I FOR SELECT USING (true)', t);
-        EXECUTE format('CREATE POLICY IF NOT EXISTS "Allow public insert" ON %I FOR INSERT WITH CHECK (true)', t);
-        EXECUTE format('CREATE POLICY IF NOT EXISTS "Allow public update" ON %I FOR UPDATE USING (true)', t);
-        EXECUTE format('CREATE POLICY IF NOT EXISTS "Allow public delete" ON %I FOR DELETE USING (true)', t);
+        -- Drop existing policies first
+        EXECUTE format('DROP POLICY IF EXISTS "Allow public read" ON %I', t);
+        EXECUTE format('DROP POLICY IF EXISTS "Allow public insert" ON %I', t);
+        EXECUTE format('DROP POLICY IF EXISTS "Allow public update" ON %I', t);
+        EXECUTE format('DROP POLICY IF EXISTS "Allow public delete" ON %I', t);
+        
+        -- Create new policies
+        EXECUTE format('CREATE POLICY "Allow public read" ON %I FOR SELECT USING (true)', t);
+        EXECUTE format('CREATE POLICY "Allow public insert" ON %I FOR INSERT WITH CHECK (true)', t);
+        EXECUTE format('CREATE POLICY "Allow public update" ON %I FOR UPDATE USING (true)', t);
+        EXECUTE format('CREATE POLICY "Allow public delete" ON %I FOR DELETE USING (true)', t);
     END LOOP;
 END $$;
 
