@@ -13,13 +13,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "HSE Dashboard Pro",
-  description: "Health, Safety & Environment Management Dashboard",
+  title: "CROW Process Management",
+  description: "ISO 9001:2015 Manufacturing Process Control System",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "HSE Pro",
+    title: "CROW Process",
   },
   icons: {
     icon: "/icons/icon-192.png",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#3b82f6",
+  themeColor: "#059669",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} font-sans antialiased`}>
+      <body className={`${inter.className} font-sans antialiased`} suppressHydrationWarning>
         <QueryProvider>
           <SettingsProvider>
             {children}
