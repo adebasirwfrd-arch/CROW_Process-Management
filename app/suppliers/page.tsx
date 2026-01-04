@@ -1,55 +1,31 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import {
-    Truck, Plus, Search, Filter, Star, MapPin,
-    Phone, Mail, CheckCircle, AlertCircle, TrendingUp,
-    MoreVertical, Building2, Award
+    Truck, Plus, Search, Star, MapPin,
+    CheckCircle, AlertCircle, Building2, Award, Loader2
 } from "lucide-react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { GlassCard } from "@/components/ui/glass-card"
 import { PageTransition } from "@/components/ui/page-transition"
-
-// Placeholder data - will be replaced with Supabase queries
-const mockSuppliers = [
-    {
-        id: 1,
-        code: "SUP-001",
-        name: "PT Steel Indonesia",
-        category: "Raw Material",
-        status: "Active",
-        rating: 4.5,
-        isoCertified: true,
-        city: "Jakarta",
-        lastEvaluation: "2026-01-01"
-    },
-    {
-        id: 2,
-        code: "SUP-002",
-        name: "CV Precision Parts",
-        category: "Component",
-        status: "Active",
-        rating: 4.2,
-        isoCertified: true,
-        city: "Surabaya",
-        lastEvaluation: "2025-12-15"
-    },
-    {
-        id: 3,
-        code: "SUP-003",
-        name: "PT Rubber Tech",
-        category: "Raw Material",
-        status: "Probation",
-        rating: 3.5,
-        isoCertified: false,
-        city: "Bandung",
-        lastEvaluation: "2025-11-20"
-    },
-]
+import { useSuppliers, useSupplierStats } from "@/hooks/useSuppliers"
 
 export default function SuppliersPage() {
     const [searchTerm, setSearchTerm] = useState("")
     const [filterStatus, setFilterStatus] = useState("All")
+
+    // Real data from Supabase
+    const { data: suppliers, isLoading, error } = useSuppliers({
+        status: filterStatus !== 'All' ? filterStatus : undefined
+    })
+    const { data: stats } = useSupplierStats()
+
+    // Filter by search term
+    const filteredSuppliers = suppliers?.filter(s =>
+        s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        s.code.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || []
 
     return (
         <PageTransition>
@@ -64,10 +40,10 @@ export default function SuppliersPage() {
                             ISO 9001:2015 - Clause 8.4 External Providers
                         </p>
                     </div>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors">
+                    <Link href="/suppliers/new" className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors">
                         <Plus className="w-4 h-4" />
                         <span>Add Supplier</span>
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Stats Cards */}
@@ -78,7 +54,7 @@ export default function SuppliersPage() {
                                 <Building2 className="w-5 h-5 text-emerald-600" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-[var(--text-primary)]">24</p>
+                                <p className="text-2xl font-bold text-[var(--text-primary)]">{stats?.total ?? '-'}</p>
                                 <p className="text-xs text-[var(--text-muted)]">Total Suppliers</p>
                             </div>
                         </div>
@@ -89,7 +65,7 @@ export default function SuppliersPage() {
                                 <CheckCircle className="w-5 h-5 text-green-600" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-[var(--text-primary)]">18</p>
+                                <p className="text-2xl font-bold text-[var(--text-primary)]">{stats?.active ?? '-'}</p>
                                 <p className="text-xs text-[var(--text-muted)]">Active</p>
                             </div>
                         </div>
@@ -100,7 +76,7 @@ export default function SuppliersPage() {
                                 <Award className="w-5 h-5 text-blue-600" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-[var(--text-primary)]">15</p>
+                                <p className="text-2xl font-bold text-[var(--text-primary)]">{stats?.isoCertified ?? '-'}</p>
                                 <p className="text-xs text-[var(--text-muted)]">ISO Certified</p>
                             </div>
                         </div>
@@ -111,7 +87,7 @@ export default function SuppliersPage() {
                                 <AlertCircle className="w-5 h-5 text-yellow-600" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-[var(--text-primary)]">3</p>
+                                <p className="text-2xl font-bold text-[var(--text-primary)]">{stats?.probation ?? '-'}</p>
                                 <p className="text-xs text-[var(--text-muted)]">On Probation</p>
                             </div>
                         </div>
@@ -136,67 +112,103 @@ export default function SuppliersPage() {
                         className="px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border-light)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     >
                         <option value="All">All Status</option>
-                        <option value="Active">Active</option>
-                        <option value="Probation">Probation</option>
-                        <option value="Inactive">Inactive</option>
+                        <option value="active">Active</option>
+                        <option value="probation">Probation</option>
+                        <option value="inactive">Inactive</option>
                     </select>
                 </div>
 
+                {/* Loading State */}
+                {isLoading && (
+                    <div className="flex items-center justify-center py-12">
+                        <Loader2 className="w-8 h-8 animate-spin text-emerald-600" />
+                    </div>
+                )}
+
+                {/* Error State */}
+                {error && (
+                    <div className="text-center py-12 text-red-500">
+                        <p>Failed to load suppliers. Please apply database migrations first.</p>
+                        <p className="text-sm text-[var(--text-muted)] mt-2">Run supabase_manufacturing_schema.sql in Supabase SQL Editor</p>
+                    </div>
+                )}
+
+                {/* Empty State */}
+                {!isLoading && !error && filteredSuppliers.length === 0 && (
+                    <div className="text-center py-12 text-[var(--text-muted)]">
+                        <Building2 className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                        <p>No suppliers found</p>
+                        <Link href="/suppliers/new" className="text-emerald-600 hover:underline mt-2 inline-block">
+                            Add your first supplier
+                        </Link>
+                    </div>
+                )}
+
                 {/* Suppliers List */}
-                <div className="space-y-3">
-                    {mockSuppliers.map((supplier, index) => (
-                        <motion.div
-                            key={supplier.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <GlassCard className="p-4 hover:border-emerald-500/50 transition-colors cursor-pointer">
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold">
-                                            {supplier.name.charAt(0)}
-                                        </div>
-                                        <div>
-                                            <div className="flex items-center gap-2">
-                                                <h3 className="font-semibold text-[var(--text-primary)]">
-                                                    {supplier.name}
-                                                </h3>
-                                                {supplier.isoCertified && (
-                                                    <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
-                                                        ISO 9001
-                                                    </span>
+                {!isLoading && !error && filteredSuppliers.length > 0 && (
+                    <div className="space-y-3">
+                        {filteredSuppliers.map((supplier, index) => (
+                            <motion.div
+                                key={supplier.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                            >
+                                <Link href={`/suppliers/${supplier.id}`}>
+                                    <GlassCard className="p-4 hover:border-emerald-500/50 transition-colors cursor-pointer">
+                                        <div className="flex items-start justify-between">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold">
+                                                    {supplier.name.charAt(0)}
+                                                </div>
+                                                <div>
+                                                    <div className="flex items-center gap-2">
+                                                        <h3 className="font-semibold text-[var(--text-primary)]">
+                                                            {supplier.name}
+                                                        </h3>
+                                                        {supplier.is_iso_certified && (
+                                                            <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+                                                                ISO 9001
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <p className="text-sm text-[var(--text-muted)]">{supplier.code}</p>
+                                                    <div className="flex items-center gap-4 mt-2 text-xs text-[var(--text-muted)]">
+                                                        {supplier.city && (
+                                                            <span className="flex items-center gap-1">
+                                                                <MapPin className="w-3 h-3" />
+                                                                {supplier.city}
+                                                            </span>
+                                                        )}
+                                                        <span className="px-2 py-0.5 bg-[var(--bg-tertiary)] rounded capitalize">
+                                                            {supplier.category?.replace('_', ' ')}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col items-end gap-2">
+                                                <span className={`px-2 py-1 text-xs font-medium rounded-full capitalize ${supplier.status === "active"
+                                                        ? "bg-green-100 text-green-700"
+                                                        : supplier.status === "probation"
+                                                            ? "bg-yellow-100 text-yellow-700"
+                                                            : "bg-gray-100 text-gray-700"
+                                                    }`}>
+                                                    {supplier.status}
+                                                </span>
+                                                {supplier.current_rating && (
+                                                    <div className="flex items-center gap-1">
+                                                        <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                                                        <span className="text-sm font-medium">{supplier.current_rating}</span>
+                                                    </div>
                                                 )}
                                             </div>
-                                            <p className="text-sm text-[var(--text-muted)]">{supplier.code}</p>
-                                            <div className="flex items-center gap-4 mt-2 text-xs text-[var(--text-muted)]">
-                                                <span className="flex items-center gap-1">
-                                                    <MapPin className="w-3 h-3" />
-                                                    {supplier.city}
-                                                </span>
-                                                <span className="px-2 py-0.5 bg-[var(--bg-tertiary)] rounded">
-                                                    {supplier.category}
-                                                </span>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex flex-col items-end gap-2">
-                                        <span className={`px-2 py-1 text-xs font-medium rounded-full ${supplier.status === "Active"
-                                                ? "bg-green-100 text-green-700"
-                                                : "bg-yellow-100 text-yellow-700"
-                                            }`}>
-                                            {supplier.status}
-                                        </span>
-                                        <div className="flex items-center gap-1">
-                                            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                                            <span className="text-sm font-medium">{supplier.rating}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </GlassCard>
-                        </motion.div>
-                    ))}
-                </div>
+                                    </GlassCard>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+                )}
             </div>
         </PageTransition>
     )
