@@ -567,18 +567,11 @@ BEGIN
 END $$;
 
 -- ============================================================================
--- 11. AUDIT TRIGGERS (Reuse existing audit infrastructure)
+-- 11. AUDIT TRIGGERS (Optional - if using HSE audit infrastructure)
 -- ============================================================================
 
--- Note: If audit_logs table and log_audit function exist from HSE system,
--- we can create triggers for manufacturing tables
-
--- Example trigger creation (if audit infrastructure exists):
-/*
-CREATE TRIGGER audit_parts_master
-    AFTER INSERT OR UPDATE OR DELETE ON parts_master
-    FOR EACH ROW EXECUTE FUNCTION log_table_changes();
-*/
+-- Note: If you have audit_logs table from HSE system, you can add triggers here.
+-- See HSE system for audit trigger examples.
 
 -- ============================================================================
 -- End of Migration
