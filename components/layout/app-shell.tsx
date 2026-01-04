@@ -4,7 +4,8 @@ import { useState, createContext, useContext, type ReactNode } from "react"
 import {
     Home, FileText, ListChecks, BarChart3, Calendar,
     FolderOpen, TrendingUp, Target, Grid, ClipboardList,
-    Download, Settings, LogIn, LogOut, Menu, X, ChevronRight, Shield, User, Users, Bell
+    Download, Settings, LogIn, LogOut, Menu, X, ChevronRight, Shield, User, Users, Bell,
+    Factory, Truck, PackageCheck, AlertTriangle, Wrench, Cpu, Package, CheckCircle2, Activity
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
@@ -29,25 +30,26 @@ export function useAppShell() {
     return context
 }
 
+// CROW Process Management - ISO 9001 Manufacturing Navigation
 const navItems = [
-    { href: "/", label: "Home", icon: Home },
-    { href: "/hse-programs", label: "HSE Programs", icon: FileText },
-    { href: "/tasks", label: "Tasks", icon: ListChecks },
-    { href: "/statistics", label: "Statistics", icon: BarChart3 },
-    { href: "/calendar", label: "Calendar", icon: Calendar },
-    { href: "/related-docs", label: "Related Docs", icon: FolderOpen },
-    { href: "/hse-kpi", label: "HSE KPI", icon: TrendingUp },
-    { href: "/ll-indicator", label: "LL Indicator", icon: Target },
-    { href: "/otp", label: "HSE OTP", icon: ClipboardList },
-    { href: "/matrix", label: "Matrix", icon: Grid },
-    { href: "/community", label: "Community", icon: Users },
+    { href: "/", label: "Dashboard", icon: Home },
+    { href: "/suppliers", label: "Suppliers", icon: Truck },
+    { href: "/incoming-qc", label: "Incoming QC", icon: PackageCheck },
+    { href: "/production", label: "Production", icon: Factory },
+    { href: "/machines", label: "Machines & IoT", icon: Cpu },
+    { href: "/quality", label: "Quality Control", icon: CheckCircle2 },
+    { href: "/ncr", label: "NCR & CAPA", icon: AlertTriangle },
+    { href: "/packing", label: "Packing", icon: Package },
+    { href: "/parts-catalog", label: "Parts Catalog", icon: Grid },
+    { href: "/analytics", label: "Analytics", icon: BarChart3 },
+    { href: "/documents", label: "Documents", icon: FolderOpen },
 ]
 
 // Bottom nav for mobile - limited to key items
 const mobileNavItems = [
     { href: "/", label: "Home", icon: Home },
-    { href: "/otp", label: "OTP", icon: ClipboardList },
-    { href: "/matrix", label: "Matrix", icon: Grid },
+    { href: "/production", label: "Production", icon: Factory },
+    { href: "/quality", label: "Quality", icon: CheckCircle2 },
     { href: "/settings", label: "Profile", icon: User },
 ]
 
@@ -100,9 +102,9 @@ export function AppShell({ children }: { children: ReactNode }) {
                     <div className="p-3 lg:p-4 border-b border-[var(--border-light)]">
                         {/* Logo Row */}
                         <div className="flex items-center justify-between mb-3">
-                            <div className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-sky)] p-2 lg:px-4 lg:py-2 rounded-lg">
-                                <span className="text-white font-bold text-sm hidden lg:block">HSE Plan</span>
-                                <span className="text-white font-bold text-sm lg:hidden">HSE</span>
+                            <div className="bg-gradient-to-br from-emerald-600 to-teal-500 p-2 lg:px-4 lg:py-2 rounded-lg">
+                                <span className="text-white font-bold text-sm hidden lg:block">CROW Process</span>
+                                <span className="text-white font-bold text-sm lg:hidden">CROW</span>
                             </div>
                             {/* Status Badge */}
                             {isAuthenticated && !isAdmin && (
@@ -263,7 +265,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                                 </span>
                             </div>
                         )}
-                        <p className="text-[10px] text-[var(--text-muted)] text-center mt-2 hidden lg:block">HSE App v2.0</p>
+                        <p className="text-[10px] text-[var(--text-muted)] text-center mt-2 hidden lg:block">CROW v1.0</p>
                     </div>
                 </aside>
 
@@ -276,7 +278,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                         <Menu className="w-6 h-6" />
                     </button>
                     <div className="flex items-center gap-2">
-                        <span className="font-semibold text-[var(--text-primary)]">HSE Plan</span>
+                        <span className="font-semibold text-[var(--text-primary)]">CROW Process</span>
                         {isAuthenticated && !isAdmin && (
                             <span className="text-[9px] bg-[var(--warning-color)]/10 text-[var(--warning-color)] px-2 py-0.5 rounded-full font-medium">
                                 View-Only
@@ -326,8 +328,8 @@ export function AppShell({ children }: { children: ReactNode }) {
                 )}>
                     {/* Drawer Header */}
                     <div className="p-5 flex justify-between items-start border-b border-[var(--border-light)]">
-                        <div className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-sky)] px-4 py-2 rounded-lg">
-                            <span className="text-white font-bold text-sm">HSE Plan</span>
+                        <div className="bg-gradient-to-br from-emerald-600 to-teal-500 px-4 py-2 rounded-lg">
+                            <span className="text-white font-bold text-sm">CROW Process</span>
                         </div>
                         <button
                             onClick={() => setIsDrawerOpen(false)}
@@ -425,7 +427,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
                     {/* Drawer Footer */}
                     <div className="p-5 text-center border-t border-[var(--border-light)]">
-                        <p className="text-xs text-[var(--text-muted)]">HSE App v2.0</p>
+                        <p className="text-xs text-[var(--text-muted)]">CROW Process v1.0</p>
                         {isAdmin && (
                             <p className="text-[10px] text-[var(--success-color)] mt-1">✓ Admin Mode Active</p>
                         )}
