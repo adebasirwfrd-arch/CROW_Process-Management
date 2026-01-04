@@ -1,0 +1,499 @@
+# 💰 HSE PLAN V2 - TECHNICAL DEVELOPMENT COST BREAKDOWN
+## Enterprise Software Valuation Report
+
+---
+
+## 📊 EXECUTIVE SUMMARY
+
+| Metric | Value |
+|--------|-------|
+| **Total Development Hours** | 892 Hours |
+| **Senior Developer Rate** | IDR 750.000 / Hour |
+| **Total Market Value** | IDR 669.000.000 |
+| **Your Investment** | IDR 200.000.000 |
+| **Savings** | IDR 469.000.000 (70%) |
+
+---
+
+# 🔧 DETAILED BREAKDOWN BY MODULE
+
+---
+
+## 1️⃣ CORE INFRASTRUCTURE & SECURITY
+**Estimated Value: IDR 135.000.000**
+
+### 1.1 Next.js 16 Application Setup
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Project initialization & configuration | 4 | 750.000 | 3.000.000 |
+| App Router architecture design | 8 | 750.000 | 6.000.000 |
+| TypeScript configuration & types | 6 | 750.000 | 4.500.000 |
+| Environment variables setup | 2 | 750.000 | 1.500.000 |
+| PWA manifest & service worker | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **28** | | **21.000.000** |
+
+### 1.2 Supabase Database Design (13 Tables)
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Database schema design | 16 | 750.000 | 12.000.000 |
+| master_programs table | 4 | 750.000 | 3.000.000 |
+| program_progress table | 4 | 750.000 | 3.000.000 |
+| hse_kpi_years table | 3 | 750.000 | 2.250.000 |
+| hse_kpi_metrics table | 3 | 750.000 | 2.250.000 |
+| matrix_programs table | 4 | 750.000 | 3.000.000 |
+| hse_tasks table | 6 | 750.000 | 4.500.000 |
+| task_attachments table | 3 | 750.000 | 2.250.000 |
+| audit_logs table | 6 | 750.000 | 4.500.000 |
+| safety_moments table | 4 | 750.000 | 3.000.000 |
+| safety_moment_interactions table | 3 | 750.000 | 2.250.000 |
+| safety_moment_comments table | 3 | 750.000 | 2.250.000 |
+| notification_logs table | 4 | 750.000 | 3.000.000 |
+| user_settings table | 3 | 750.000 | 2.250.000 |
+| Database triggers & functions | 12 | 750.000 | 9.000.000 |
+| **Subtotal** | **78** | | **58.500.000** |
+
+### 1.3 Row Level Security (RLS) Policies
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| RLS policy design | 8 | 750.000 | 6.000.000 |
+| Admin role policies | 4 | 750.000 | 3.000.000 |
+| Manager role policies | 4 | 750.000 | 3.000.000 |
+| User role policies | 4 | 750.000 | 3.000.000 |
+| Public access policies | 2 | 750.000 | 1.500.000 |
+| Security testing | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **28** | | **21.000.000** |
+
+### 1.4 Authentication System
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Supabase Auth integration | 8 | 750.000 | 6.000.000 |
+| Google OAuth implementation | 12 | 750.000 | 9.000.000 |
+| Login/Logout pages | 6 | 750.000 | 4.500.000 |
+| Session management | 6 | 750.000 | 4.500.000 |
+| Auth callback handlers | 4 | 750.000 | 3.000.000 |
+| useAdmin hook | 4 | 750.000 | 3.000.000 |
+| Protected routes | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **46** | | **34.500.000** |
+
+### 📦 SECTION 1 TOTAL: 180 Hours = IDR 135.000.000
+
+---
+
+## 2️⃣ HSE BUSINESS MODULES (The Brain)
+**Estimated Value: IDR 195.000.000**
+
+### 2.1 OTP (Objective Target Program) Module
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| OTP page design & layout | 8 | 750.000 | 6.000.000 |
+| Multi-region support (Indonesia, Asia) | 12 | 750.000 | 9.000.000 |
+| Multi-base filtering (Duri, Narogong, Balikpapan) | 10 | 750.000 | 7.500.000 |
+| Monthly plan vs actual tracking | 16 | 750.000 | 12.000.000 |
+| Progress calculation engine | 12 | 750.000 | 9.000.000 |
+| otp-store.ts data management | 8 | 750.000 | 6.000.000 |
+| MobileProgramCard component | 6 | 750.000 | 4.500.000 |
+| OTP table with sorting/filtering | 12 | 750.000 | 9.000.000 |
+| Status indicators (on-track, behind, completed) | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **88** | | **66.000.000** |
+
+### 2.2 HSE Matrix Module (4 Categories)
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Matrix page architecture | 8 | 750.000 | 6.000.000 |
+| Audit matrix implementation | 10 | 750.000 | 7.500.000 |
+| Training matrix implementation | 10 | 750.000 | 7.500.000 |
+| Drill matrix implementation | 8 | 750.000 | 6.000.000 |
+| Meeting matrix implementation | 8 | 750.000 | 6.000.000 |
+| matrix-store.ts data management | 8 | 750.000 | 6.000.000 |
+| MobileMatrixCard component | 6 | 750.000 | 4.500.000 |
+| Regional breakdown by base | 8 | 750.000 | 6.000.000 |
+| Program assignment tracking | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **72** | | **54.000.000** |
+
+### 2.3 Task Management System
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Tasks page design | 8 | 750.000 | 6.000.000 |
+| Task CRUD operations | 16 | 750.000 | 12.000.000 |
+| tasks-store.ts implementation | 10 | 750.000 | 7.500.000 |
+| Priority system (low, medium, high, urgent) | 4 | 750.000 | 3.000.000 |
+| Status workflow (pending → in_progress → completed) | 6 | 750.000 | 4.500.000 |
+| Due date tracking & alerts | 6 | 750.000 | 4.500.000 |
+| File attachments system | 12 | 750.000 | 9.000.000 |
+| TaskCard component | 6 | 750.000 | 4.500.000 |
+| Task filtering & search | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **74** | | **55.500.000** |
+
+### 2.4 KPI Dashboard Module
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| KPI page design | 6 | 750.000 | 4.500.000 |
+| Man hours tracking | 8 | 750.000 | 6.000.000 |
+| Custom metric creation | 10 | 750.000 | 7.500.000 |
+| Target vs Result comparison | 6 | 750.000 | 4.500.000 |
+| kpi-store.ts & kpi-actions.ts | 8 | 750.000 | 6.000.000 |
+| useKPI hook | 4 | 750.000 | 3.000.000 |
+| Tremor charts integration | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **50** | | **37.500.000** |
+
+### 📦 SECTION 2 TOTAL: 260 Hours = IDR 195.000.000
+
+---
+
+## 3️⃣ AI & ADVANCED INTEGRATIONS
+**Estimated Value: IDR 127.500.000**
+
+### 3.1 OpenAI GPT-4o AI Consultant
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| OpenAI API integration | 8 | 750.000 | 6.000.000 |
+| /api/ai-insight endpoint | 10 | 750.000 | 7.500.000 |
+| AIConsultant component | 12 | 750.000 | 9.000.000 |
+| Executive summary generation | 8 | 750.000 | 6.000.000 |
+| Risk identification logic | 6 | 750.000 | 4.500.000 |
+| Action recommendations | 6 | 750.000 | 4.500.000 |
+| Health score calculation | 6 | 750.000 | 4.500.000 |
+| Prompt engineering | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **64** | | **48.000.000** |
+
+### 3.2 Stream.io Social Feed
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Stream.io SDK integration | 8 | 750.000 | 6.000.000 |
+| /api/stream-token endpoint | 4 | 750.000 | 3.000.000 |
+| stream-service.ts | 8 | 750.000 | 6.000.000 |
+| Community page design | 8 | 750.000 | 6.000.000 |
+| Safety Moments posting | 10 | 750.000 | 7.500.000 |
+| Like/Comment interactions | 8 | 750.000 | 6.000.000 |
+| PostCard component | 6 | 750.000 | 4.500.000 |
+| Real-time updates | 6 | 750.000 | 4.500.000 |
+| Trending topics | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **62** | | **46.500.000** |
+
+### 3.3 Google Calendar Integration
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Google OAuth setup | 6 | 750.000 | 4.500.000 |
+| google-calendar.ts service | 8 | 750.000 | 6.000.000 |
+| /api/calendar endpoint | 6 | 750.000 | 4.500.000 |
+| /auth/callback/google handler | 6 | 750.000 | 4.500.000 |
+| Bi-directional sync logic | 10 | 750.000 | 7.500.000 |
+| Calendar page integration | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **44** | | **33.000.000** |
+
+### 📦 SECTION 3 TOTAL: 170 Hours = IDR 127.500.000
+
+---
+
+## 4️⃣ DOCUMENT & FILE MANAGEMENT
+**Estimated Value: IDR 52.500.000**
+
+### 4.1 Google Drive Integration
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Google Drive API setup | 8 | 750.000 | 6.000.000 |
+| /api/drive/* endpoints | 12 | 750.000 | 9.000.000 |
+| docs-store.ts | 6 | 750.000 | 4.500.000 |
+| File upload functionality | 8 | 750.000 | 6.000.000 |
+| File download functionality | 4 | 750.000 | 3.000.000 |
+| Category organization | 6 | 750.000 | 4.500.000 |
+| Related documents page | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **52** | | **39.000.000** |
+
+### 4.2 UploadThing Integration
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| UploadThing SDK setup | 4 | 750.000 | 3.000.000 |
+| /api/uploadthing endpoint | 4 | 750.000 | 3.000.000 |
+| uploadthing.ts config | 2 | 750.000 | 1.500.000 |
+| File type restrictions | 2 | 750.000 | 1.500.000 |
+| Upload progress tracking | 4 | 750.000 | 3.000.000 |
+| Error handling | 2 | 750.000 | 1.500.000 |
+| **Subtotal** | **18** | | **13.500.000** |
+
+### 📦 SECTION 4 TOTAL: 70 Hours = IDR 52.500.000
+
+---
+
+## 5️⃣ EMAIL & NOTIFICATION SYSTEM
+**Estimated Value: IDR 60.000.000**
+
+### 5.1 AWS SES Email Integration
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| AWS SES SDK setup | 4 | 750.000 | 3.000.000 |
+| Email service implementation | 8 | 750.000 | 6.000.000 |
+| HTML email templates | 12 | 750.000 | 9.000.000 |
+| OTP reminder templates | 6 | 750.000 | 4.500.000 |
+| Brevo fallback integration | 6 | 750.000 | 4.500.000 |
+| Email provider switching | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **40** | | **30.000.000** |
+
+### 5.2 Notification System
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| notification-service.ts | 10 | 750.000 | 7.500.000 |
+| notification_logs table & API | 6 | 750.000 | 4.500.000 |
+| useNotifications hook | 4 | 750.000 | 3.000.000 |
+| NotificationBell component | 6 | 750.000 | 4.500.000 |
+| Real-time notifications | 8 | 750.000 | 6.000.000 |
+| User preference settings | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **40** | | **30.000.000** |
+
+### 📦 SECTION 5 TOTAL: 80 Hours = IDR 60.000.000
+
+---
+
+## 6️⃣ ANALYTICS & REPORTING
+**Estimated Value: IDR 52.500.000**
+
+### 6.1 Statistics Dashboard
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Statistics page design | 8 | 750.000 | 6.000.000 |
+| statistics-store.ts (22KB) | 10 | 750.000 | 7.500.000 |
+| Data aggregation logic | 12 | 750.000 | 9.000.000 |
+| Recharts integration | 8 | 750.000 | 6.000.000 |
+| Tremor dashboard components | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **46** | | **34.500.000** |
+
+### 6.2 Export & Reports
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| export-report.ts | 8 | 750.000 | 6.000.000 |
+| export-service.ts | 8 | 750.000 | 6.000.000 |
+| PDF generation (@react-pdf) | 12 | 750.000 | 9.000.000 |
+| Excel export (xlsx) | 6 | 750.000 | 4.500.000 |
+| CSV export | 4 | 750.000 | 3.000.000 |
+| PDFDownloadButton component | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **42** | | **31.500.000** |
+
+### 6.3 Audit Trail System
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| audit_logs table triggers | 10 | 750.000 | 7.500.000 |
+| useAuditLogs hook (8KB) | 6 | 750.000 | 4.500.000 |
+| Audit logs page | 8 | 750.000 | 6.000.000 |
+| Log filtering & search | 6 | 750.000 | 4.500.000 |
+| Change history display | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **36** | | **27.000.000** |
+
+### 📦 SECTION 6 TOTAL: 70 Hours = IDR 52.500.000
+
+---
+
+## 7️⃣ UI/UX & COMPONENTS
+**Estimated Value: IDR 75.000.000**
+
+### 7.1 Core UI Components
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| AppShell (sidebar, mobile nav, drawer) | 16 | 750.000 | 12.000.000 |
+| GlassCard component | 4 | 750.000 | 3.000.000 |
+| PageTransition (Framer Motion) | 6 | 750.000 | 4.500.000 |
+| LottieDisplay component | 4 | 750.000 | 3.000.000 |
+| RightSidebar component | 8 | 750.000 | 6.000.000 |
+| Settings page & settings-store.ts | 10 | 750.000 | 7.500.000 |
+| Theme system (dark/light) | 6 | 750.000 | 4.500.000 |
+| Internationalization (i18n) | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **62** | | **46.500.000** |
+
+### 7.2 Chart Components
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Chart component library setup | 6 | 750.000 | 4.500.000 |
+| Line charts | 4 | 750.000 | 3.000.000 |
+| Bar charts | 4 | 750.000 | 3.000.000 |
+| Pie/Donut charts | 4 | 750.000 | 3.000.000 |
+| Area charts | 4 | 750.000 | 3.000.000 |
+| Custom chart styling | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **28** | | **21.000.000** |
+
+### 7.3 Responsive Design
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Desktop layout (1200px+) | 8 | 750.000 | 6.000.000 |
+| Tablet layout (768px-1199px) | 10 | 750.000 | 7.500.000 |
+| Mobile layout (320px-767px) | 14 | 750.000 | 10.500.000 |
+| Safe area insets (iPhone) | 4 | 750.000 | 3.000.000 |
+| Touch optimization | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **42** | | **31.500.000** |
+
+### 📦 SECTION 7 TOTAL: 100 Hours = IDR 75.000.000
+
+---
+
+## 8️⃣ MOBILE APP (React Native + Expo)
+**Estimated Value: IDR 112.500.000**
+
+### 8.1 React Native Setup
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Expo project initialization | 4 | 750.000 | 3.000.000 |
+| Navigation setup (React Navigation) | 8 | 750.000 | 6.000.000 |
+| State management | 8 | 750.000 | 6.000.000 |
+| API client configuration | 6 | 750.000 | 4.500.000 |
+| Environment configuration | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **30** | | **22.500.000** |
+
+### 8.2 Mobile Screens
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Home/Dashboard screen | 12 | 750.000 | 9.000.000 |
+| Programs screen | 10 | 750.000 | 7.500.000 |
+| Tasks screen | 10 | 750.000 | 7.500.000 |
+| Calendar screen | 8 | 750.000 | 6.000.000 |
+| Documents screen | 8 | 750.000 | 6.000.000 |
+| Settings screen | 6 | 750.000 | 4.500.000 |
+| Login/Auth screens | 8 | 750.000 | 6.000.000 |
+| **Subtotal** | **62** | | **46.500.000** |
+
+### 8.3 Mobile Features
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Offline mode & caching | 12 | 750.000 | 9.000.000 |
+| Push notifications | 10 | 750.000 | 7.500.000 |
+| Biometric authentication | 6 | 750.000 | 4.500.000 |
+| Camera integration | 6 | 750.000 | 4.500.000 |
+| Deep linking | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **38** | | **28.500.000** |
+
+### 8.4 App Store Deployment
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Android build configuration (APK/AAB) | 8 | 750.000 | 6.000.000 |
+| iOS build configuration | 8 | 750.000 | 6.000.000 |
+| App store assets & screenshots | 6 | 750.000 | 4.500.000 |
+| Store listing preparation | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **26** | | **19.500.000** |
+
+### 📦 SECTION 8 TOTAL: 150 Hours = IDR 112.500.000
+
+---
+
+## 9️⃣ DEVOPS & INFRASTRUCTURE
+**Estimated Value: IDR 45.000.000**
+
+### 9.1 Vercel Deployment
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Vercel project setup | 4 | 750.000 | 3.000.000 |
+| Edge configuration | 6 | 750.000 | 4.500.000 |
+| Environment variables | 2 | 750.000 | 1.500.000 |
+| Domain configuration | 2 | 750.000 | 1.500.000 |
+| Edge functions optimization | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **20** | | **15.000.000** |
+
+### 9.2 CI/CD Pipeline
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| GitHub Actions workflow | 8 | 750.000 | 6.000.000 |
+| Lint & type checking | 4 | 750.000 | 3.000.000 |
+| Build automation | 4 | 750.000 | 3.000.000 |
+| Deployment automation | 6 | 750.000 | 4.500.000 |
+| Failure notifications | 2 | 750.000 | 1.500.000 |
+| **Subtotal** | **24** | | **18.000.000** |
+
+### 9.3 Monitoring & Maintenance
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Error tracking setup | 4 | 750.000 | 3.000.000 |
+| Performance monitoring | 4 | 750.000 | 3.000.000 |
+| Maintenance mode page | 4 | 750.000 | 3.000.000 |
+| Cron job scheduling (/api/cron) | 6 | 750.000 | 4.500.000 |
+| **Subtotal** | **18** | | **13.500.000** |
+
+### 📦 SECTION 9 TOTAL: 60 Hours = IDR 45.000.000
+
+---
+
+## 🔟 QA, TESTING & DOCUMENTATION
+**Estimated Value: IDR 37.500.000**
+
+### 10.1 Testing
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Unit testing | 12 | 750.000 | 9.000.000 |
+| Integration testing | 10 | 750.000 | 7.500.000 |
+| E2E testing | 8 | 750.000 | 6.000.000 |
+| UAT (User Acceptance Testing) | 8 | 750.000 | 6.000.000 |
+| Bug fixing & refinement | 10 | 750.000 | 7.500.000 |
+| **Subtotal** | **40** | | **30.000.000** |
+
+### 10.2 Documentation
+| Task | Hours | Rate (IDR) | Value (IDR) |
+|------|-------|------------|-------------|
+| Technical documentation | 6 | 750.000 | 4.500.000 |
+| API documentation | 4 | 750.000 | 3.000.000 |
+| User guide | 4 | 750.000 | 3.000.000 |
+| Deployment guide | 4 | 750.000 | 3.000.000 |
+| **Subtotal** | **18** | | **13.500.000** |
+
+### 📦 SECTION 10 TOTAL: 50 Hours = IDR 37.500.000
+
+---
+
+# 📊 GRAND TOTAL SUMMARY
+
+| Section | Hours | Value (IDR) |
+|---------|-------|-------------|
+| 1. Core Infrastructure & Security | 180 | 135.000.000 |
+| 2. HSE Business Modules | 260 | 195.000.000 |
+| 3. AI & Advanced Integrations | 170 | 127.500.000 |
+| 4. Document & File Management | 70 | 52.500.000 |
+| 5. Email & Notification System | 80 | 60.000.000 |
+| 6. Analytics & Reporting | 70 | 52.500.000 |
+| 7. UI/UX & Components | 100 | 75.000.000 |
+| 8. Mobile App (React Native) | 150 | 112.500.000 |
+| 9. DevOps & Infrastructure | 60 | 45.000.000 |
+| 10. QA, Testing & Documentation | 50 | 37.500.000 |
+| **GRAND TOTAL** | **892** | **IDR 669.000.000** |
+
+---
+
+# 💎 VALUE COMPARISON
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   📈 MARKET DEVELOPMENT COST                                │
+│   ═══════════════════════════════════════════════════════   │
+│                                                             │
+│   Total Hours:        892 Hours                             │
+│   Senior Dev Rate:    IDR 750.000 / Hour                    │
+│   ─────────────────────────────────────────────             │
+│   TOTAL VALUE:        IDR 669.000.000                       │
+│                                                             │
+│   ═══════════════════════════════════════════════════════   │
+│                                                             │
+│   💰 YOUR INVESTMENT                                        │
+│   ─────────────────────────────────────────────             │
+│   ENTERPRISE:         IDR 200.000.000                       │
+│   SOURCE CODE:        IDR 350.000.000                       │
+│                                                             │
+│   ═══════════════════════════════════════════════════════   │
+│                                                             │
+│   🎯 YOUR SAVINGS                                           │
+│   ─────────────────────────────────────────────             │
+│   ENTERPRISE:         IDR 469.000.000 (70% OFF)             │
+│   SOURCE CODE:        IDR 319.000.000 (48% OFF)             │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# 🏷️ PRICING TIERS
+
+| Package | Price (IDR) | Market Value | Savings |
+|---------|-------------|--------------|---------|
+| **RENT (SaaS)** | 85.000.000/yr | - | Annual subscription |
+| **ENTERPRISE** | 200.000.000 | 669.000.000 | 70% (IDR 469 Jt) |
+| **SOURCE CODE** | 350.000.000 | 669.000.000 | 48% (IDR 319 Jt) |
+
+---
+
+**Document Version:** 2.0  
+**Generated:** 2026-01-04  
+**Rate Standard:** Senior Full-Stack Developer (Indonesia Market)  
+**Based on:** blueprint-2.txt Architecture Specification

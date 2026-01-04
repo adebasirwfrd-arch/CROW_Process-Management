@@ -1,0 +1,325 @@
+Section,Subsection,Task,Hours,Rate (IDR),Value (IDR)
+
+"1. CORE INFRASTRUCTURE & SECURITY",,,,,"135,000,000"
+
+"1.1 Next.js 16 Application Setup",,"Project initialization & configuration",4,"750,000","3,000,000"
+"1.1 Next.js 16 Application Setup",,"App Router architecture design",8,"750,000","6,000,000"
+"1.1 Next.js 16 Application Setup",,"TypeScript configuration & types",6,"750,000","4,500,000"
+"1.1 Next.js 16 Application Setup",,"Environment variables setup",2,"750,000","1,500,000"
+"1.1 Next.js 16 Application Setup",,"PWA manifest & service worker",8,"750,000","6,000,000"
+"1.1 Next.js 16 Application Setup","Subtotal",,28,,"21,000,000"
+
+"1.2 Supabase Database Design (13 Tables)",,"Database schema design",16,"750,000","12,000,000"
+"1.2 Supabase Database Design (13 Tables)",,"master_programs table",4,"750,000","3,000,000"
+"1.2 Supabase Database Design (13 Tables)",,"program_progress table",4,"750,000","3,000,000"
+"1.2 Supabase Database Design (13 Tables)",,"hse_kpi_years table",3,"750,000","2,250,000"
+"1.2 Supabase Database Design (13 Tables)",,"hse_kpi_metrics table",3,"750,000","2,250,000"
+"1.2 Supabase Database Design (13 Tables)",,"matrix_programs table",4,"750,000","3,000,000"
+"1.2 Supabase Database Design (13 Tables)",,"hse_tasks table",6,"750,000","4,500,000"
+"1.2 Supabase Database Design (13 Tables)",,"task_attachments table",3,"750,000","2,250,000"
+"1.2 Supabase Database Design (13 Tables)",,"audit_logs table",6,"750,000","4,500,000"
+"1.2 Supabase Database Design (13 Tables)",,"safety_moments table",4,"750,000","3,000,000"
+"1.2 Supabase Database Design (13 Tables)",,"safety_moment_interactions table",3,"750,000","2,250,000"
+"1.2 Supabase Database Design (13 Tables)",,"safety_moment_comments table",3,"750,000","2,250,000"
+"1.2 Supabase Database Design (13 Tables)",,"notification_logs table",4,"750,000","3,000,000"
+"1.2 Supabase Database Design (13 Tables)",,"user_settings table",3,"750,000","2,250,000"
+"1.2 Supabase Database Design (13 Tables)",,"Database triggers & functions",12,"750,000","9,000,000"
+"1.2 Supabase Database Design (13 Tables)","Subtotal",,78,,"58,500,000"
+
+"1.3 Row Level Security (RLS) Policies",,"RLS policy design",8,"750,000","6,000,000"
+"1.3 Row Level Security (RLS) Policies",,"Admin role policies",4,"750,000","3,000,000"
+"1.3 Row Level Security (RLS) Policies",,"Manager role policies",4,"750,000","3,000,000"
+"1.3 Row Level Security (RLS) Policies",,"User role policies",4,"750,000","3,000,000"
+"1.3 Row Level Security (RLS) Policies",,"Public access policies",2,"750,000","1,500,000"
+"1.3 Row Level Security (RLS) Policies",,"Security testing",6,"750,000","4,500,000"
+"1.3 Row Level Security (RLS) Policies","Subtotal",,28,,"21,000,000"
+
+"1.4 Authentication System",,"Supabase Auth integration",8,"750,000","6,000,000"
+"1.4 Authentication System",,"Google OAuth implementation",12,"750,000","9,000,000"
+"1.4 Authentication System",,"Login/Logout pages",6,"750,000","4,500,000"
+"1.4 Authentication System",,"Session management",6,"750,000","4,500,000"
+"1.4 Authentication System",,"Auth callback handlers",4,"750,000","3,000,000"
+"1.4 Authentication System",,"useAdmin hook",4,"750,000","3,000,000"
+"1.4 Authentication System",,"Protected routes",6,"750,000","4,500,000"
+"1.4 Authentication System","Subtotal",,46,,"34,500,000"
+
+"SECTION 1 TOTAL",,,180,,"135,000,000"
+
+"2. HSE BUSINESS MODULES",,,,,"195,000,000"
+
+"2.1 OTP (Objective Target Program)",,"OTP page design & layout",8,"750,000","6,000,000"
+"2.1 OTP (Objective Target Program)",,"Multi-region support (Indonesia, Asia)",12,"750,000","9,000,000"
+"2.1 OTP (Objective Target Program)",,"Multi-base filtering (Duri, Narogong, Balikpapan)",10,"750,000","7,500,000"
+"2.1 OTP (Objective Target Program)",,"Monthly plan vs actual tracking",16,"750,000","12,000,000"
+"2.1 OTP (Objective Target Program)",,"Progress calculation engine",12,"750,000","9,000,000"
+"2.1 OTP (Objective Target Program)",,"otp-store.ts data management",8,"750,000","6,000,000"
+"2.1 OTP (Objective Target Program)",,"MobileProgramCard component",6,"750,000","4,500,000"
+"2.1 OTP (Objective Target Program)",,"OTP table with sorting/filtering",12,"750,000","9,000,000"
+"2.1 OTP (Objective Target Program)",,"Status indicators",4,"750,000","3,000,000"
+"2.1 OTP (Objective Target Program)","Subtotal",,88,,"66,000,000"
+
+"2.2 HSE Matrix Module (4 Categories)",,"Matrix page architecture",8,"750,000","6,000,000"
+"2.2 HSE Matrix Module (4 Categories)",,"Audit matrix implementation",10,"750,000","7,500,000"
+"2.2 HSE Matrix Module (4 Categories)",,"Training matrix implementation",10,"750,000","7,500,000"
+"2.2 HSE Matrix Module (4 Categories)",,"Drill matrix implementation",8,"750,000","6,000,000"
+"2.2 HSE Matrix Module (4 Categories)",,"Meeting matrix implementation",8,"750,000","6,000,000"
+"2.2 HSE Matrix Module (4 Categories)",,"matrix-store.ts data management",8,"750,000","6,000,000"
+"2.2 HSE Matrix Module (4 Categories)",,"MobileMatrixCard component",6,"750,000","4,500,000"
+"2.2 HSE Matrix Module (4 Categories)",,"Regional breakdown by base",8,"750,000","6,000,000"
+"2.2 HSE Matrix Module (4 Categories)",,"Program assignment tracking",6,"750,000","4,500,000"
+"2.2 HSE Matrix Module (4 Categories)","Subtotal",,72,,"54,000,000"
+
+"2.3 Task Management System",,"Tasks page design",8,"750,000","6,000,000"
+"2.3 Task Management System",,"Task CRUD operations",16,"750,000","12,000,000"
+"2.3 Task Management System",,"tasks-store.ts implementation",10,"750,000","7,500,000"
+"2.3 Task Management System",,"Priority system (low, medium, high, urgent)",4,"750,000","3,000,000"
+"2.3 Task Management System",,"Status workflow",6,"750,000","4,500,000"
+"2.3 Task Management System",,"Due date tracking & alerts",6,"750,000","4,500,000"
+"2.3 Task Management System",,"File attachments system",12,"750,000","9,000,000"
+"2.3 Task Management System",,"TaskCard component",6,"750,000","4,500,000"
+"2.3 Task Management System",,"Task filtering & search",6,"750,000","4,500,000"
+"2.3 Task Management System","Subtotal",,74,,"55,500,000"
+
+"2.4 KPI Dashboard Module",,"KPI page design",6,"750,000","4,500,000"
+"2.4 KPI Dashboard Module",,"Man hours tracking",8,"750,000","6,000,000"
+"2.4 KPI Dashboard Module",,"Custom metric creation",10,"750,000","7,500,000"
+"2.4 KPI Dashboard Module",,"Target vs Result comparison",6,"750,000","4,500,000"
+"2.4 KPI Dashboard Module",,"kpi-store.ts & kpi-actions.ts",8,"750,000","6,000,000"
+"2.4 KPI Dashboard Module",,"useKPI hook",4,"750,000","3,000,000"
+"2.4 KPI Dashboard Module",,"Tremor charts integration",8,"750,000","6,000,000"
+"2.4 KPI Dashboard Module","Subtotal",,50,,"37,500,000"
+
+"SECTION 2 TOTAL",,,260,,"195,000,000"
+
+"3. AI & ADVANCED INTEGRATIONS",,,,,"127,500,000"
+
+"3.1 OpenAI GPT-4o AI Consultant",,"OpenAI API integration",8,"750,000","6,000,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"/api/ai-insight endpoint",10,"750,000","7,500,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"AIConsultant component",12,"750,000","9,000,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"Executive summary generation",8,"750,000","6,000,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"Risk identification logic",6,"750,000","4,500,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"Action recommendations",6,"750,000","4,500,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"Health score calculation",6,"750,000","4,500,000"
+"3.1 OpenAI GPT-4o AI Consultant",,"Prompt engineering",8,"750,000","6,000,000"
+"3.1 OpenAI GPT-4o AI Consultant","Subtotal",,64,,"48,000,000"
+
+"3.2 Stream.io Social Feed",,"Stream.io SDK integration",8,"750,000","6,000,000"
+"3.2 Stream.io Social Feed",,"/api/stream-token endpoint",4,"750,000","3,000,000"
+"3.2 Stream.io Social Feed",,"stream-service.ts",8,"750,000","6,000,000"
+"3.2 Stream.io Social Feed",,"Community page design",8,"750,000","6,000,000"
+"3.2 Stream.io Social Feed",,"Safety Moments posting",10,"750,000","7,500,000"
+"3.2 Stream.io Social Feed",,"Like/Comment interactions",8,"750,000","6,000,000"
+"3.2 Stream.io Social Feed",,"PostCard component",6,"750,000","4,500,000"
+"3.2 Stream.io Social Feed",,"Real-time updates",6,"750,000","4,500,000"
+"3.2 Stream.io Social Feed",,"Trending topics",4,"750,000","3,000,000"
+"3.2 Stream.io Social Feed","Subtotal",,62,,"46,500,000"
+
+"3.3 Google Calendar Integration",,"Google OAuth setup",6,"750,000","4,500,000"
+"3.3 Google Calendar Integration",,"google-calendar.ts service",8,"750,000","6,000,000"
+"3.3 Google Calendar Integration",,"/api/calendar endpoint",6,"750,000","4,500,000"
+"3.3 Google Calendar Integration",,"/auth/callback/google handler",6,"750,000","4,500,000"
+"3.3 Google Calendar Integration",,"Bi-directional sync logic",10,"750,000","7,500,000"
+"3.3 Google Calendar Integration",,"Calendar page integration",8,"750,000","6,000,000"
+"3.3 Google Calendar Integration","Subtotal",,44,,"33,000,000"
+
+"SECTION 3 TOTAL",,,170,,"127,500,000"
+
+"4. DOCUMENT & FILE MANAGEMENT",,,,,"52,500,000"
+
+"4.1 Google Drive Integration",,"Google Drive API setup",8,"750,000","6,000,000"
+"4.1 Google Drive Integration",,"/api/drive/* endpoints",12,"750,000","9,000,000"
+"4.1 Google Drive Integration",,"docs-store.ts",6,"750,000","4,500,000"
+"4.1 Google Drive Integration",,"File upload functionality",8,"750,000","6,000,000"
+"4.1 Google Drive Integration",,"File download functionality",4,"750,000","3,000,000"
+"4.1 Google Drive Integration",,"Category organization",6,"750,000","4,500,000"
+"4.1 Google Drive Integration",,"Related documents page",8,"750,000","6,000,000"
+"4.1 Google Drive Integration","Subtotal",,52,,"39,000,000"
+
+"4.2 UploadThing Integration",,"UploadThing SDK setup",4,"750,000","3,000,000"
+"4.2 UploadThing Integration",,"/api/uploadthing endpoint",4,"750,000","3,000,000"
+"4.2 UploadThing Integration",,"uploadthing.ts config",2,"750,000","1,500,000"
+"4.2 UploadThing Integration",,"File type restrictions",2,"750,000","1,500,000"
+"4.2 UploadThing Integration",,"Upload progress tracking",4,"750,000","3,000,000"
+"4.2 UploadThing Integration",,"Error handling",2,"750,000","1,500,000"
+"4.2 UploadThing Integration","Subtotal",,18,,"13,500,000"
+
+"SECTION 4 TOTAL",,,70,,"52,500,000"
+
+"5. EMAIL & NOTIFICATION SYSTEM",,,,,"60,000,000"
+
+"5.1 AWS SES Email Integration",,"AWS SES SDK setup",4,"750,000","3,000,000"
+"5.1 AWS SES Email Integration",,"Email service implementation",8,"750,000","6,000,000"
+"5.1 AWS SES Email Integration",,"HTML email templates",12,"750,000","9,000,000"
+"5.1 AWS SES Email Integration",,"OTP reminder templates",6,"750,000","4,500,000"
+"5.1 AWS SES Email Integration",,"Brevo fallback integration",6,"750,000","4,500,000"
+"5.1 AWS SES Email Integration",,"Email provider switching",4,"750,000","3,000,000"
+"5.1 AWS SES Email Integration","Subtotal",,40,,"30,000,000"
+
+"5.2 Notification System",,"notification-service.ts",10,"750,000","7,500,000"
+"5.2 Notification System",,"notification_logs table & API",6,"750,000","4,500,000"
+"5.2 Notification System",,"useNotifications hook",4,"750,000","3,000,000"
+"5.2 Notification System",,"NotificationBell component",6,"750,000","4,500,000"
+"5.2 Notification System",,"Real-time notifications",8,"750,000","6,000,000"
+"5.2 Notification System",,"User preference settings",6,"750,000","4,500,000"
+"5.2 Notification System","Subtotal",,40,,"30,000,000"
+
+"SECTION 5 TOTAL",,,80,,"60,000,000"
+
+"6. ANALYTICS & REPORTING",,,,,"52,500,000"
+
+"6.1 Statistics Dashboard",,"Statistics page design",8,"750,000","6,000,000"
+"6.1 Statistics Dashboard",,"statistics-store.ts",10,"750,000","7,500,000"
+"6.1 Statistics Dashboard",,"Data aggregation logic",12,"750,000","9,000,000"
+"6.1 Statistics Dashboard",,"Recharts integration",8,"750,000","6,000,000"
+"6.1 Statistics Dashboard",,"Tremor dashboard components",8,"750,000","6,000,000"
+"6.1 Statistics Dashboard","Subtotal",,46,,"34,500,000"
+
+"6.2 Export & Reports",,"export-report.ts",8,"750,000","6,000,000"
+"6.2 Export & Reports",,"export-service.ts",8,"750,000","6,000,000"
+"6.2 Export & Reports",,"PDF generation (@react-pdf)",12,"750,000","9,000,000"
+"6.2 Export & Reports",,"Excel export (xlsx)",6,"750,000","4,500,000"
+"6.2 Export & Reports",,"CSV export",4,"750,000","3,000,000"
+"6.2 Export & Reports",,"PDFDownloadButton component",4,"750,000","3,000,000"
+"6.2 Export & Reports","Subtotal",,42,,"31,500,000"
+
+"6.3 Audit Trail System",,"audit_logs table triggers",10,"750,000","7,500,000"
+"6.3 Audit Trail System",,"useAuditLogs hook",6,"750,000","4,500,000"
+"6.3 Audit Trail System",,"Audit logs page",8,"750,000","6,000,000"
+"6.3 Audit Trail System",,"Log filtering & search",6,"750,000","4,500,000"
+"6.3 Audit Trail System",,"Change history display",6,"750,000","4,500,000"
+"6.3 Audit Trail System","Subtotal",,36,,"27,000,000"
+
+"SECTION 6 TOTAL",,,70,,"52,500,000"
+
+"7. UI/UX & COMPONENTS",,,,,"75,000,000"
+
+"7.1 Core UI Components",,"AppShell (sidebar, mobile nav, drawer)",16,"750,000","12,000,000"
+"7.1 Core UI Components",,"GlassCard component",4,"750,000","3,000,000"
+"7.1 Core UI Components",,"PageTransition (Framer Motion)",6,"750,000","4,500,000"
+"7.1 Core UI Components",,"LottieDisplay component",4,"750,000","3,000,000"
+"7.1 Core UI Components",,"RightSidebar component",8,"750,000","6,000,000"
+"7.1 Core UI Components",,"Settings page & settings-store.ts",10,"750,000","7,500,000"
+"7.1 Core UI Components",,"Theme system (dark/light)",6,"750,000","4,500,000"
+"7.1 Core UI Components",,"Internationalization (i18n)",8,"750,000","6,000,000"
+"7.1 Core UI Components","Subtotal",,62,,"46,500,000"
+
+"7.2 Chart Components",,"Chart component library setup",6,"750,000","4,500,000"
+"7.2 Chart Components",,"Line charts",4,"750,000","3,000,000"
+"7.2 Chart Components",,"Bar charts",4,"750,000","3,000,000"
+"7.2 Chart Components",,"Pie/Donut charts",4,"750,000","3,000,000"
+"7.2 Chart Components",,"Area charts",4,"750,000","3,000,000"
+"7.2 Chart Components",,"Custom chart styling",6,"750,000","4,500,000"
+"7.2 Chart Components","Subtotal",,28,,"21,000,000"
+
+"7.3 Responsive Design",,"Desktop layout (1200px+)",8,"750,000","6,000,000"
+"7.3 Responsive Design",,"Tablet layout (768px-1199px)",10,"750,000","7,500,000"
+"7.3 Responsive Design",,"Mobile layout (320px-767px)",14,"750,000","10,500,000"
+"7.3 Responsive Design",,"Safe area insets (iPhone)",4,"750,000","3,000,000"
+"7.3 Responsive Design",,"Touch optimization",6,"750,000","4,500,000"
+"7.3 Responsive Design","Subtotal",,42,,"31,500,000"
+
+"SECTION 7 TOTAL",,,100,,"75,000,000"
+
+"8. MOBILE APP (React Native + Expo)",,,,,"112,500,000"
+
+"8.1 React Native Setup",,"Expo project initialization",4,"750,000","3,000,000"
+"8.1 React Native Setup",,"Navigation setup (React Navigation)",8,"750,000","6,000,000"
+"8.1 React Native Setup",,"State management",8,"750,000","6,000,000"
+"8.1 React Native Setup",,"API client configuration",6,"750,000","4,500,000"
+"8.1 React Native Setup",,"Environment configuration",4,"750,000","3,000,000"
+"8.1 React Native Setup","Subtotal",,30,,"22,500,000"
+
+"8.2 Mobile Screens",,"Home/Dashboard screen",12,"750,000","9,000,000"
+"8.2 Mobile Screens",,"Programs screen",10,"750,000","7,500,000"
+"8.2 Mobile Screens",,"Tasks screen",10,"750,000","7,500,000"
+"8.2 Mobile Screens",,"Calendar screen",8,"750,000","6,000,000"
+"8.2 Mobile Screens",,"Documents screen",8,"750,000","6,000,000"
+"8.2 Mobile Screens",,"Settings screen",6,"750,000","4,500,000"
+"8.2 Mobile Screens",,"Login/Auth screens",8,"750,000","6,000,000"
+"8.2 Mobile Screens","Subtotal",,62,,"46,500,000"
+
+"8.3 Mobile Features",,"Offline mode & caching",12,"750,000","9,000,000"
+"8.3 Mobile Features",,"Push notifications",10,"750,000","7,500,000"
+"8.3 Mobile Features",,"Biometric authentication",6,"750,000","4,500,000"
+"8.3 Mobile Features",,"Camera integration",6,"750,000","4,500,000"
+"8.3 Mobile Features",,"Deep linking",4,"750,000","3,000,000"
+"8.3 Mobile Features","Subtotal",,38,,"28,500,000"
+
+"8.4 App Store Deployment",,"Android build configuration (APK/AAB)",8,"750,000","6,000,000"
+"8.4 App Store Deployment",,"iOS build configuration",8,"750,000","6,000,000"
+"8.4 App Store Deployment",,"App store assets & screenshots",6,"750,000","4,500,000"
+"8.4 App Store Deployment",,"Store listing preparation",4,"750,000","3,000,000"
+"8.4 App Store Deployment","Subtotal",,26,,"19,500,000"
+
+"SECTION 8 TOTAL",,,150,,"112,500,000"
+
+"9. DEVOPS & INFRASTRUCTURE",,,,,"45,000,000"
+
+"9.1 Vercel Deployment",,"Vercel project setup",4,"750,000","3,000,000"
+"9.1 Vercel Deployment",,"Edge configuration",6,"750,000","4,500,000"
+"9.1 Vercel Deployment",,"Environment variables",2,"750,000","1,500,000"
+"9.1 Vercel Deployment",,"Domain configuration",2,"750,000","1,500,000"
+"9.1 Vercel Deployment",,"Edge functions optimization",6,"750,000","4,500,000"
+"9.1 Vercel Deployment","Subtotal",,20,,"15,000,000"
+
+"9.2 CI/CD Pipeline",,"GitHub Actions workflow",8,"750,000","6,000,000"
+"9.2 CI/CD Pipeline",,"Lint & type checking",4,"750,000","3,000,000"
+"9.2 CI/CD Pipeline",,"Build automation",4,"750,000","3,000,000"
+"9.2 CI/CD Pipeline",,"Deployment automation",6,"750,000","4,500,000"
+"9.2 CI/CD Pipeline",,"Failure notifications",2,"750,000","1,500,000"
+"9.2 CI/CD Pipeline","Subtotal",,24,,"18,000,000"
+
+"9.3 Monitoring & Maintenance",,"Error tracking setup",4,"750,000","3,000,000"
+"9.3 Monitoring & Maintenance",,"Performance monitoring",4,"750,000","3,000,000"
+"9.3 Monitoring & Maintenance",,"Maintenance mode page",4,"750,000","3,000,000"
+"9.3 Monitoring & Maintenance",,"Cron job scheduling (/api/cron)",6,"750,000","4,500,000"
+"9.3 Monitoring & Maintenance","Subtotal",,18,,"13,500,000"
+
+"SECTION 9 TOTAL",,,60,,"45,000,000"
+
+"10. QA, TESTING & DOCUMENTATION",,,,,"37,500,000"
+
+"10.1 Testing",,"Unit testing",12,"750,000","9,000,000"
+"10.1 Testing",,"Integration testing",10,"750,000","7,500,000"
+"10.1 Testing",,"E2E testing",8,"750,000","6,000,000"
+"10.1 Testing",,"UAT (User Acceptance Testing)",8,"750,000","6,000,000"
+"10.1 Testing",,"Bug fixing & refinement",10,"750,000","7,500,000"
+"10.1 Testing","Subtotal",,40,,"30,000,000"
+
+"10.2 Documentation",,"Technical documentation",6,"750,000","4,500,000"
+"10.2 Documentation",,"API documentation",4,"750,000","3,000,000"
+"10.2 Documentation",,"User guide",4,"750,000","3,000,000"
+"10.2 Documentation",,"Deployment guide",4,"750,000","3,000,000"
+"10.2 Documentation","Subtotal",,18,,"13,500,000"
+
+"SECTION 10 TOTAL",,,50,,"37,500,000"
+
+,,,,,,
+"GRAND TOTAL SUMMARY",,,,,,
+Section,Description,Hours,Rate (IDR),Value (IDR),
+"1","Core Infrastructure & Security",180,"750,000","135,000,000",
+"2","HSE Business Modules",260,"750,000","195,000,000",
+"3","AI & Advanced Integrations",170,"750,000","127,500,000",
+"4","Document & File Management",70,"750,000","52,500,000",
+"5","Email & Notification System",80,"750,000","60,000,000",
+"6","Analytics & Reporting",70,"750,000","52,500,000",
+"7","UI/UX & Components",100,"750,000","75,000,000",
+"8","Mobile App (React Native)",150,"750,000","112,500,000",
+"9","DevOps & Infrastructure",60,"750,000","45,000,000",
+"10","QA, Testing & Documentation",50,"750,000","37,500,000",
+"GRAND TOTAL",,892,,"669,000,000",
+
+,,,,,,
+"VALUE COMPARISON",,,,,,
+Package,Price (IDR),Market Value (IDR),Savings (IDR),Savings (%),
+"RENT (SaaS)","85,000,000/yr","-","-","Annual subscription",
+"ENTERPRISE","200,000,000","669,000,000","469,000,000","70%",
+"SOURCE CODE","350,000,000","669,000,000","319,000,000","48%",
+
+,,,,,,
+"DOCUMENT INFO",,,,,,
+"Generated","2026-01-04",,,,
+"Rate Standard","Senior Full-Stack Developer (Indonesia Market)",,,,
+"Total Hours",892,,,,
+"Hourly Rate (IDR)","750,000",,,,
+"Total Market Value (IDR)","669,000,000",,,,

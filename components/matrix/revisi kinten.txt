@@ -1,0 +1,45 @@
+**CONTENT STRUCTURE PER CARD:**
+
+**CARD 1: MANAGED CLOUD (The Anchor)**
+* **Title:** RENT (SAAS) - Starter
+* **Price:** <span class="text-2xl font-bold text-white">IDR 85 Jt</span> <span class="text-sm">/ Year</span>
+* **Features (Use Red/Yellow 'X' or 'Check' icons for contrast):**
+    * ❌ Vendor Server (Shared)
+    * ❌ Data Held by Vendor
+    * ✅ Max 50 Users
+    * ❌ Paid Customization Only
+* ✅ **3-MONTH FREE CUSTOMIZATION** - *We Build Your Wishlist.*
+    * ✅ **LIFETIME BUG WARRANTY** - *As Long as Rent.*
+* **Button:** "Rent Now" (Small, Outline)
+
+**CARD 2: ENTERPRISE LIFETIME (THE HERO - BIG & GLOWING)**
+* **Badge:** ⭐ MOST POPULAR & BEST VALUE ⭐
+* **Pill Badge:** 🔥 SAVE 50% + FREE BONUS 🔥
+* **Title:** **ENTERPRISE PARTNER (LIFETIME)**
+* **Price Anchor:** <span class="text-red-400 line-through text-xl">Rp 500.000.000</span>
+* **Main Price:** <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300 glow-emerald">IDR 200 Jt</span> <span class="text-lg">/ One-Time</span>
+* **Compelling Features (Use Green Check Icons with bold text):**
+    * ✅ **100% DATA CONTROL (Your Server)** - *Zero Vendor Access (exept for maintenance).*
+    * ✅ **UNLIMITED USERS FOREVER** - *No Hidden Fees.*
+    * ✅ **1-YEAR FREE CUSTOMIZATION** - *We Build Your Wishlist.*
+    * ✅ **LIFETIME BUG WARRANTY** - *Never Pay for Fixes.*
+* **🎁 THE BONUS BOX (Highlighted Green Box):**
+    * **INCLUDED FREE:**
+    * 📱 **CSMS APP LICENSE** (Value: Rp 75 Jt)
+    * *Manage Contractors for Free!*
+* **Button:** "⚡ LOCK THIS 200 JT OFFER ⚡" (Massive, Pulsing Green Button)
+
+**CARD 3: FULL OWNERSHIP (THE SULTAN - LARGEST FONT & GOLD GLOW)**
+* **Badge:** ULTIMATE CONTROL & ASSET
+* **Pill Badge:** 🔥 SAVE 50% + FREE BONUS 🔥
+* **Title:** **SOURCE CODE OWNERSHIP**
+* **Price Anchor:** <span class="text-red-400 line-through text-2xl">Rp 750.000.000</span>
+* **Main Price:** <span class="text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300 glow-gold">IDR 350 Jt</span> <span class="text-xl">/ One-Time</span>
+* **Features (Use Gold Icons):**
+    * ✅ **EVERYTHING IN ENTERPRISE**
+    * 📦 **FULL SOURCE CODE (FE+BE+DB)** - *Your Company Asset.*
+    * 🛠️ **RIGHT TO MODIFY & DEVELOP** - *Total Independence.*
+    * 🎁 **BONUS: CSMS SOURCE CODE** - *Double the Value.*
+* **Button:** "👑 ACQUIRE IP RIGHTS 👑" (Large, Pulsing Gold Button)
+
+Ensure the layout uses CSS Grid for responsiveness, and apply the requested animations for a dynamic feel.
